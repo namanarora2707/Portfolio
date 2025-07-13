@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects Portfolio</title>
+    <link rel="stylesheet" href="../assets/css/project.css">
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1>My Projects Portfolio</h1>
+            <p>Showcasing my journey through Data Structures & Algorithms, Frontend Development, and Backend Engineering</p>
+        </header>
+
+        <div class="sections-grid">
+            <!-- DSA Section -->
+            <section class="section dsa">
+                <h2 class="section-title">DSA</h2>
+                
+                <div class="project">
+                    <h3 class="project-title">Sorting Algorithm Visualizer</h3>
+                    <p class="project-description">Interactive visualization of various sorting algorithms with real-time performance analysis and step-by-step execution.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Canvas</span>
+                        <span class="tech-tag">Algorithms</span>
+                    </div>
+                </div>
+
+
+                <div class="project">
+                    <h3 class="project-title">Binary Tree Operations</h3>
+                    <p class="project-description">Complete implementation of binary search tree with insertion, deletion, traversal, and balancing operations.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C++</span>
+                        <span class="tech-tag">Data Structures</span>
+                        <span class="tech-tag">Trees</span>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <!-- Frontend Section -->
+            <section class="section frontend">
+                <h2 class="section-title">Frontend</h2>
+                
+                <div class="project">
+                    <h3 class="project-title">E-Commerce Dashboard</h3>
+                    <p class="project-description">Modern responsive dashboard with real-time analytics, product management, and user interface built with React.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Chart.js</span>
+                        <span class="tech-tag">Tailwind</span>
+                    </div>
+                </div>
+
+                
+
+                <div class="project">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-description">Personal portfolio with smooth animations, responsive design, and interactive elements showcasing my work.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">GSAP</span>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Backend Section -->
+            <section class="section backend">
+                <h2 class="section-title">Backend</h2>
+                
+                <div class="project">
+                    <h3 class="project-title">RESTful API Server</h3>
+                    <p class="project-description">Scalable REST API with authentication, rate limiting, database integration, and comprehensive documentation.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <h3 class="project-title">Chat Application</h3>
+                    <p class="project-description">Real-time messaging application with WebSocket support, room management, and message persistence.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Socket.io</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+
+
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Initialize particles on page load
+        document.addEventListener('DOMContentLoaded', createParticles);
+
+        // Add scroll animation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    section.style.transform = 'translateY(0)';
+                    section.style.opacity = '1';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
